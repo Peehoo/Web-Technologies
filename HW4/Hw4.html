@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<script type="text/javascript">
+
+	var xmlDoc;
+	function loadXML(url){
+		if(window.XMLHttpRequest){
+			// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		}
+		else {
+			// code for IE6, IE5
+			xmlhttp = ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.open("GET", url, false);	//'false' = synchronous request
+		xmlhttp.send();						// open, send, responseXML are
+		xmlDoc = xmlhttp.responseXML;		// properties of XMLHTTPRequest
+		return xmlDoc;
+	}
+
+
+
+	function processXMLFile(url)
+	{
+		// Checking if the user did not enter any input and clicked submit
+		if(url == ""){
+			alert("No URL entered in the textbox");
+			return false;
+		}
+		var xmlData = loadXML(url);
+		if(window.ActiveXObject){ //if IE, execute this script
+			if(xmlData.parseError.errorCode != 0){
+				alert("Error in xml file");
+				return false;
+			}
+		}
+		else if(!xmlData){ // For Chrome check if xmlData is null
+
+			alert("Error in xml file");
+			return false;
+		}
+		// for Firefox check if there is a parseerror node. If there is then that means that XML is invalid
+		else if(xmlData.getElementsByTagName("parsererror").length > 0)
+		{
+			alert("Error in XML File");
+			return false;
+		}
+
+		//Checking if the XML file has no PLANT elements
+		if(xmlData.getElementsByTagName("PLANT").length < 1){
+			alert("No plants in XML file");
+		}
+		else{
+			var html_text = generateHTML(xmlData);
+			hWin = window.open("", "Assignment4", "scrollbars=1 height=800,width=600");
+   			hWin.document.write(html_text);  
+   			hWin.document.close();
+		}
+	}
+
+	function generateHTML(xmlData){
+        
+        html_text="<html><head><title>XML Parse Result</title></head><body>";
+        html_text += "<table border='2'>";
+        
+        html_text += "<tr><th>Common</th><th>Botanical</th><th>Zone</th><th>Light</th><th>Price</th><th>Image</th></tr>";
+        
+        plant = xmlData.firstChild.getElementsByTagName("PLANT");
+        
+        for(i=0; i<plant.length; i++){
+           
+            html_text += "<tr>";                        // start a new row of the output table
+            
+            var common = plant.item(i).getElementsByTagName("COMMON")[0];
+            var botanical = plant.item(i).getElementsByTagName("BOTANICAL")[0];
+            var zone = plant.item(i).getElementsByTagName("ZONE")[0];
+            var light = plant.item(i).getElementsByTagName("LIGHT")[0];
+            var price = plant.item(i).getElementsByTagName("PRICE")[0];
+            var image = plant.item(i).getElementsByTagName("IMAGE")[0];
+            
+            if(common){
+	            if((common.nodeType == 1) && (common.firstChild!=null)){
+	            	html_text+="<td>"+ common.firstChild.nodeValue+"</td>";
+	            }
+	            else html_text+="<td>N/A</td>";
+       		}
+       		if(botanical){
+	            if(botanical && (botanical.nodeType == 1)&&(botanical.firstChild!=null)){
+	            	html_text+="<td>"+ botanical.firstChild.nodeValue+"</td>";
+	            }
+	            else html_text+="<td>N/A</td>";
+	        }
+	        if(zone){
+	            if(zone && (zone.nodeType == 1)&&(zone.firstChild!=null)){
+	            	html_text+="<td>"+ zone.firstChild.nodeValue+"</td>";
+	            }
+	            else html_text+="<td>N/A</td>";
+	        }
+	        if(light){
+	            if(light && (light.nodeType == 1)&&(light.firstChild!=null)){
+	            	html_text+="<td>"+ light.firstChild.nodeValue+"</td>";
+	            }
+	            else html_text+="<td>N/A</td>";
+	        }
+	        if(price){
+	            if(price && (price.nodeType == 1)&&(price.firstChild!=null)){
+	            	html_text+="<td>"+ price.firstChild.nodeValue+"</td>";
+	            }
+	            else html_text+="<td>N/A</td>";
+	        }
+	        if(image){
+	            if(image && (image.nodeType == 1)&&(image.firstChild!=null)){
+					html_text+="<td><img src = " + image.firstChild.nodeValue+ " \" style= \" width: 200px; height: 200px;\"></td>";            
+				}
+	            else html_text+="<td>N/A</td>";
+	        }
+            html_text+="</tr>";
+        }
+        html_text+="</table>";
+        html_text+="</bo"+"dy></html>";
+        return html_text;
+	}
+
+	</script>
+	<body>
+		<center>
+		<br><br><br><br><br><br><br><br>
+		<form name="input" method="get" style = "text-align:center">
+			Enter URL for Plant Catalog XML File <br><br>
+			<input type="text" id="xmlFile" size="35"></input><br><br>
+			<button onClick = processXMLFile(document.getElementById("xmlFile").value);>Submit Query</button>
+		</form>
+		</center>
+		<NOSCRIPT>
+	</body>
+</html>

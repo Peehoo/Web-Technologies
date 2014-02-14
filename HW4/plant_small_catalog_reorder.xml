@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<CATALOG>
+  <PLANT>
+    <COMMON>Bloodroot</COMMON>
+    <BOTANICAL>Sanguinaria canadensis</BOTANICAL>
+    <ZONE>4</ZONE>
+    <LIGHT>Mostly Shady</LIGHT>
+    <PRICE>$2.44</PRICE>
+    <IMAGE>sanguinaria.canadensis.jpg</IMAGE>
+  </PLANT>  
+  <PLANT>
+    <PRICE>$9.37</PRICE>
+	<COMMON>Columbine</COMMON>
+    <BOTANICAL>Aquilegia canadensis</BOTANICAL>
+    <ZONE>3</ZONE>
+    <LIGHT>Mostly Shady</LIGHT>
+    <IMAGE>aquilegia.canadensis.jpg</IMAGE>
+  </PLANT>
+  <PLANT>
+    <COMMON>Marsh Marigold</COMMON>
+    <LIGHT>Mostly Sunny</LIGHT>
+    <BOTANICAL>Caltha palustris</BOTANICAL>
+    <ZONE>4</ZONE>
+    <PRICE>$6.81</PRICE>
+    <IMAGE>caltha.palustris.jpg</IMAGE>
+  </PLANT>
+  <PLANT>
+    <BOTANICAL>Diecentra cucullaria</BOTANICAL>
+    <ZONE>3</ZONE>
+    <LIGHT>Mostly Shady</LIGHT>
+    <COMMON>Dutchman's-Breeches</COMMON>
+    <PRICE>$6.44</PRICE>
+    <IMAGE>dicentra.cucullaria.jpg</IMAGE>
+  </PLANT>   
+</CATALOG>
