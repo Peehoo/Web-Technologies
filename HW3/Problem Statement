@@ -1,0 +1,20 @@
+Homework #3: Imitating a Web Page Using HTML and CSS
+
+You should be able to compose documents directly in HTML and CSS. This is very helpful as it is often necessary to modify existing documents. Also, when writing server-side scripts one must generate HTML.
+In this assignment you are given an image of a web page. Your task is to reproduce the page as closely as possible, writing HTML and CSS directly, that is without using anything more than a text editor.
+
+Important Note: use of CSS is required.
+
+Please note that if you view the PNG image in a browser, some browsers will automatically resize the image to fit within the browser window. To get a clear picture of the PNG image, please disable (temporarily) such a feature in your browser. Also, please set the resolution of your display to 1024 x 768.
+
+You need NO image files to imitate this page.
+
+The page contains six (6) active links at the top, and four (4) on the left. The six links at the top are named: ABOUT US, OUR PEOPLE, OUR WORK, OUR PUBLIC SERVICE, JOIN US, and LIBRARY. The four links on the left are: SOFTWARE, HARDWARE, LANGUAGES, and DATABASES. On your page all of these links should be made active, and all of these links should point to the same page, say X.html at your site. The page X.html should be divided into ten (10) parts, each separated by a horizontal line. Each part will begin with a paragraph tag that looks like this
+
+<p id="ABOUTUS">
+This is the start of X.html which corresponds to the "ABOUT US" link.
+
+You are to construct the ten (10) links, so that when a person clicks on a link, (e.g. they click on "ABOUT US") the page X.html is displayed and the section of X.html that has the corresponding name as the name of the link, is placed at the top) (i.e., the page scrolls up).
+
+Remember, you must link this homework to your class homework page so that the graders can go to your website and grade your homework.
+
