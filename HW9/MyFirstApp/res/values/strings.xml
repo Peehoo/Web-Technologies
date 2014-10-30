@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My First App</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="edit_message">Enter Stock Symbol</string>
+    <string name="button_send">Search</string>
+    <string name="title_activity_display_message">MyMessage</string>
+    <string name="companyName"></string>
+    <string name="lastTradePriceOnly"></string>
+    <string name="change"></string>
+    <string name="img"></string>
+    <string name="prevCloseValue"></string>
+    <string name="openValue"></string>
+    <string name="bidValue"></string>
+    <string name="askValue"></string>
+    <string name="firstYrTargetValue"></string>
+    <string name="daysRangeValue"></string>
+    <string name="yearRangeValue"></string>
+    <string name="volumeValue"></string>
+    <string name="avgVolumeValue"></string>
+    <string name="marketCapValue"></string>
+    <string name="button_news"></string>
+    <string name="button_facebook"></string>
+    <string name="title_activity_display_news">DisplayNewsActivity</string>
+    <string name="app_id">689153817816885</string>
+	<string name = "title_facebook_login">FBLogin</string>
+</resources>
